@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20.0" fx:id="mainContainer" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.cryptanalyzer.Controller" style="-fx-background-color: #f0f0f0;">
+    <children>
+        <Label text="Путь к файлу:" style="-fx-font-weight: bold;" />
+        <HBox spacing="10">
+            <TextField fx:id="filePathTextField" HBox.hgrow="ALWAYS" style="-fx-background-radius: 5px;" />
+            <Button text="Обзор" fx:id="browseButton" onAction="#handleBrowseAction" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" />
+        </HBox>
+        <Label fx:id="referenceFileLabel" text="Путь к референсному файлу:" visible="false" style="-fx-font-weight: bold;" />
+        <HBox spacing="10" visible="false" fx:id="referenceFileBox">
+            <TextField fx:id="referenceFilePathTextField" HBox.hgrow="ALWAYS" style="-fx-background-radius: 5px;" />
+            <Button text="Обзор" fx:id="browseReferenceButton" onAction="#handleBrowseReferenceAction" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5px;" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Ключ:" style="-fx-font-weight: bold;" />
+            <TextField fx:id="keyTextField" HBox.hgrow="ALWAYS" style="-fx-background-radius: 5px;" />
+        </HBox>
+        <ComboBox fx:id="modeComboBox" onAction="#handleModeChange" maxWidth="300">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Шифрование Цезарем" />
+                    <String fx:value="Расшифровка" />
+                    <String fx:value="Brute Force" />
+                    <String fx:value="Статистический анализ" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <HBox spacing="10">
+            <Button text="Выполнить" fx:id="executeButton" onAction="#handleExecuteAction" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 5px;" />
+            <Button text="Очистить" fx:id="clearButton" onAction="#handleClearAction" style="-fx-background-color: #FFC107; -fx-text-fill: black; -fx-background-radius: 5px;" />
+        </HBox>
+        <TextArea fx:id="outputTextArea" wrapText="true" prefHeight="150" style="-fx-background-radius: 5px;" />
+        <ProgressBar fx:id="progressBar" visible="false" />
+    </children>
+</VBox>
