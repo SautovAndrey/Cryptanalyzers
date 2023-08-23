@@ -1,6 +1,6 @@
 ---
 
-# Cryptanalyzers
+# Cryptanalyzers🔐
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/SautovAndrey/Cryptanalyzers/blob/main/LICENSE)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
